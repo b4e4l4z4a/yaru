@@ -1,0 +1,9 @@
+{
+  "MD033": {
+    "allowed_elements": ["details", "div", "iframe", "p", "strong", "summary"]
+  },
+
+  "$alias": true,
+  "line-length": false,
+  "first-line-h1": false
+}
