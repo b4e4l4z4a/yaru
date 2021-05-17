@@ -55,14 +55,14 @@ yaru
 ├── README.md
 ├── .backup
 │   └── .stylesheet.css
-└── article
+└── articles
     └── *.md
 ```
 
 - `.markdownlint.json`: VSCodeで利用している拡張機能の設定ファイル
 - `README.md`: この説明書き
 - `.backup/.stylesheet.css`: Seesaaブログて適用しているブログテーマのCSSファイル
-- `article/*.md`: `yyyyMMdd-a-summary-of-this-article.md`な命名方式のMarkdownファイル
+- `articles/*.md`: `yyyyMMdd-a-summary-of-this-article.md`な命名方式のMarkdownファイル
   - HTMLファイルに変換されてからブログに投稿される記事
   - ファイル名のうち拡張子より前の部分は記事のURLとなる
 
@@ -99,7 +99,7 @@ IoT家電には憧れがあるがAPIが非公開でプロプライエタリな�
 今回は、ご存知Catolixブランドの激安トースターについて考察。
 
 <!--! readmore !-->
-
+<!-- omit-in-toc -->
 #### もくじ  
 
 ---
@@ -128,6 +128,7 @@ Catolixはすごいぜ！
 余裕でIoTできそう！
 
 <!--! end-of-article !-->
+
 ```
 
 </div>
@@ -160,11 +161,11 @@ Catolixはすごいぜ！
 <summary><strong>記事内メタデータのプロパティ</strong>（クリックで開く）</summary>
 <div>
 
-- `id`: 1以上の整数・記事のID
-- `url`: 文字列・ドメイン以下の記事のURL
+- `id`: 1以上の固有の整数・記事のID
+- `url`: 固有の文字列・ドメイン以下の記事のURL
   - `@ITSELF!`はファイルの名前を示す
-- `idea`: 文字列・内容の要約
-- `title`: 文字列・タイトル
+- `idea`: 固有の文字列・内容の要約
+- `title`: 固有の文字列・タイトル
 - `author`: 文字列・著者
   - ベルザのブログなので原則`"ベルザ"`を指定する
 - `category`: 文字列・Seesaaブログ内のカテゴリ
@@ -177,11 +178,11 @@ Catolixはすごいぜ！
 - `genre`: 文字列・Seesaaブログ内のジャンル（？）
 - `posted_at`: `yyyyMMddHHmmss`形式の日付・投稿日時
 - `updated_at`: `yyyyMMddHHmmss`形式の日付・更新日時
-- `country`: 投稿元の国
+- `country`: 文字列・投稿元の国
   - `@JA!`を指定すると日本になる
   - `posted_at`と`updated_at`とのUTCからの時差を求めたりするのに使うかも
   - 記事の言語設定とかにも使うと複雑になりそう
-- `note`: そのほかの項目
+- `note`: 文字列・そのほかの項目
   - いまのところ`@WIP!`は記事の製作中、`@TRIAL!`はいろいろ試験中であることを示す
 
 </div>
@@ -240,7 +241,7 @@ Seesaaブログの「もくじ」機能は使用せず、Markdownで記述する
 - `WRITESOMETHING`: （主に）ファイルのわかりやすい表現
   - 記事ファイルの場合は`metadata`内の`idea`
   - 記事以外のファイルの場合はルートディレクトリからのパス
-- `[--ATTRIBUTES]`: 記事ファイルへ行った変更内容の列挙
+- `[--ATTRIBUTES]`: `JOT`, `PUB`, `EDI`のいずれかの操作を行った際の変更内容の列挙
   - `all`: `[--ATTRIBUTES]`オプションのすべて
   - `content`: 内容
   - `essential`: `content`, `html`, `md`, `metadata`のすべて
@@ -259,7 +260,7 @@ Seesaaブログの「もくじ」機能は使用せず、Markdownで記述する
 
 - `INITIAL COMMIT`: リポジトリの最初のコミット
 - `SPECIAL`: リポジトリのメタ的な操作
-  - ディレクトリの生成のみをコミットする場合
+  - ディレクトリの生成のみをコミットする場合（？）
   - ほか、破壊的な変更
 
 ### コミット時コメントの例
@@ -279,10 +280,12 @@ Seesaaブログの「もくじ」機能は使用せず、Markdownで記述する
 ## バージョン
 
 - 命名規則など: 0.1.1
-- リポジトリ構造: 0.1
-- CI/CDまわり: 0.1
+- リポジトリのディレクトリ構造: 0.1.1
+- CI/CDまわり: 0.1.1
+- この説明書き: 0.1.1
 
 ## 更新履歴
 
+2021/05/17 12:34:56 JST リポジトリのディレクトリ構造を一部変更・記事内メタデータの一部のプロパティに固有値を指定・ほか書き足りなかったところを追記  
 2021/05/17 11:43:28 JST 記事内メタデータとcommit時コメントに用いる整数の最小値を指定  
 2021/05/17 00:52:59 JST とりあえず作成、骨が折れる…
