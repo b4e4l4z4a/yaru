@@ -54,14 +54,14 @@ yaru
 ├── .markdownlint.json
 ├── README.md
 ├── .backup
-│   └── .stylesheet.css
+│   └── .stylesheet*.css
 └── articles
     └── *.md
 ```
 
 - `.markdownlint.json`: VSCodeで利用している拡張機能の設定ファイル
 - `README.md`: この説明書き
-- `.backup/.stylesheet.css`: Seesaaブログて適用しているブログテーマのCSSファイル
+- `.backup/.stylesheet*.css`: Seesaaブログて適用しているブログテーマのCSSファイル
 - `articles/*.md`: `yyyyMMdd-a-summary-of-this-article.md`な命名方式のMarkdownファイル
   - HTMLファイルに変換されてからブログに投稿される記事
   - ファイル名のうち拡張子より前の部分は記事のURLとなる
@@ -280,12 +280,13 @@ Seesaaブログの「もくじ」機能は使用せず、Markdownで記述する
 ## バージョン
 
 - 命名規則など: 0.1.1
-- リポジトリのディレクトリ構造: 0.1.1
+- リポジトリのディレクトリ構造: 0.1.2
 - CI/CDまわり: 0.1.1
 - この説明書き: 0.1.2
 
 ## 更新履歴
 
+2021/05/17 12:54:40 JST リポジトリのディレクトリ構造を一部変更
 2021/05/17 12:45:00 JST この説明書きの一部URLが無効だったため修正  
 2021/05/17 12:34:56 JST リポジトリのディレクトリ構造を一部変更・記事内メタデータの一部のプロパティに固有値を指定・ほか書き足りなかったところを追記  
 2021/05/17 11:43:28 JST 記事内メタデータとcommit時コメントに用いる整数の最小値を指定  
